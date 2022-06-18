@@ -10,7 +10,7 @@
     gtag('config', 'UA-71156606-1');
   </script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>[SNET] Unsupervised QA</title>
+  <title>[QIAI] COVID-19 Lung Lesion Segmentation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <link rel="stylesheet" type="text/css" href="assets/styles/all.css" />
   <script type="text/javascript">document.documentElement.className = 'js';</script>
@@ -21,7 +21,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade" />
     <!-- <meta property="og:site_name" content="OpenAI" /> -->
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Unsupervised Context-Driven QA" />
+    <meta property="og:title" content="COVID-19 Lung Lesion Segmentation" />
     <!-- <meta property="og:description" content="We built a neural theorem prover for Lean [https://leanprover.github.io/] that
 learned to solve a variety of challenging high-school olympiad problems,
 including problems from the AMC12
@@ -29,6 +29,9 @@ including problems from the AMC12
 [https://www.maa.org/math-competitions/invitational-competitions] competitions,
 as well as two problems adapted from" /> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<link rel="stylesheet" href="/path/to/styles/default.min.css">
+<script src="/path/to/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 
     <script type="application/ld+json">
 {
@@ -175,7 +178,7 @@ mark {
    balance-text
    mb-0.75 mb-xl-2.25
    
-  "><span class="underline-effect">Unsupervised Context-Driven Question Answering Based on Link Grammar</span></h1>          </div>
+  "><span class="underline-effect">COVID-19 Lung Lesion Segmentation Using a Sparsely Supervised Mask R-CNN on Chest X-rays Automatically Computed from Volumetric CTs</span></h1>          </div>
         </div>
     </div>
       <div class="row">
@@ -185,15 +188,15 @@ mark {
         </div>
         <div class="col-12 col-md-3 col-lg-4 col-xl-3 order-xl-0">
             <div class="post-header-date small-copy color-fg-50 mb-1.5">
-    <time datetime="2022-02-02"><span style="color: black">October 16, 2021</span></time>
-    <div class="reading-time" style="position: relative; top: 10px">Presented at the <span style="color: black">14<sup>th</sup> International<br>Conference on Artificial General<br>Intelligence (<strong><span class="underline-effect-2"><a href="https://agi-conf.org/2021/" target=_blank>AGI-21</a></span></strong>)</span></div>
+    <time datetime="2022-02-02"><span style="color: black">May 17, 2021</span></time>
+    <div class="reading-time" style="position: relative; top: 10px">Presented at the <span style="color: black">2021 Annual Meeting of the Society for Imaging Informatics in Medicine (<strong><span class="underline-effect-2"><a href="https://siim.org/page/siim2021" target=_blank>SIIM21</a></span></strong>)</span></div>
     <div class="reading-time" style="position: relative; top: 20px"><span style="color: black">Cite as: </span>
-      <pre style="width: 80%; position: relative; top:-20px"><code ><span style="color: black">Ramesh V., Kolonin A. (2022)<br>Unsupervised Context-Driven Question 
-Answering Based on Link Grammar. <br>In: Goertzel B., Iklé M., Potapov A.
-(eds) Artificial General Intelligence. 
-AGI 2021. Lecture Notes in Computer 
-Science, vol 13154. Springer, Cham. 
-[<strong><span class="underline-effect-2" ><a href="https://doi.org/10.1007/978-3-030-93758-4_22">doi</a></span></strong>]           
+      <pre style="width: 83%; position: relative; top:-20px"><code ><span style="color: black">V. Ramesh, B. Rister, and D. L. Rubin.
+“COVID-19 Lung Lesion Segmentation 
+Using a Sparsely Supervised Mask R-CNN
+on Chest X-rays Automatically Computed 
+from Volumetric CTs.” arXiv:2105.08147
+[eess.IV], May 2021.
 </code></pre></div></div></div></div>
  </div>
   </div>
@@ -202,7 +205,18 @@ Science, vol 13154. Springer, Cham.
   <div class="row">
     <section class="content">
       <!--kg-card-begin: markdown--><div class="js-excerpt" >
-<p> In this paper, we propose an
+<p> Chest X-rays of COVID-19 patients are frequently obtained 
+  to determine the extent of lung disease and are a valuable source of data for creating 
+  AI models. Most work to date assessing disease severity on chest 
+  imaging has focused on segmenting CT images; however, given that 
+  CTs are performed much less frequently than chest X-rays for COVID-19 patients, automated 
+  lung lesion segmentation on chest X-rays is clinically valuable. To <mark>accelerate 
+  severity detection</mark> and <mark>augment the amount of publicly available chest X-ray training data 
+  for supervised DL models</mark>, we propose an automated pipeline for segmentation of COVID-19 lung lesions 
+  on chest X-rays comprised of a <mark style="background-color: rgba(0, 225, 255, 0.689);">Mask R-CNN</mark> trained on a <mark style="background-color: rgba(0, 225, 255, 0.689);">mixed dataset</mark> of open-source chest 
+  X-rays and <mark style="background-color: rgba(0, 225, 255, 0.689);">coronal X-ray projections computed from annotated volumetric CTs</mark>. 
+  
+  <!-- In this paper, we propose an
   interpretable <mark>“Contextual Generator”</mark> architecture for question answering (QA),
   built as an extension of the recently published <mark>“Generator”</mark> algorithm for sentence generation<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>, 
   that produces grammatically valid answers to queries structured as lists of seed words. 
@@ -210,86 +224,176 @@ Science, vol 13154. Springer, Cham.
   perform automated, closed-domain QA by detailing results on queries from
   <a href="https://singularitynet.io/" target=_blank>SingularityNET</a>’s “small world” <mark style="background-color: rgba(0, 225, 255, 0.689);">POC-English corpus</mark> and from the <mark style="background-color: rgba(0, 225, 255, 0.689);"><strong>S</strong>tanford
   <strong>Qu</strong>estion <strong>A</strong>nswering <strong>D</strong>ataset</mark> (<a href="https://rajpurkar.github.io/SQuAD-explorer/explore/v2.0/dev/" target=_blank>SQuAD 2.0</a>). Overall, our work may bring a greater degree of
-  general conversational intelligence to proto-AGI NLP pipelines.
+  general conversational intelligence to proto-AGI NLP pipelines. -->
   
 </div>
 
 
-<section class="btns" style="position: relative; top: -50px"><a href="https://link.springer.com/chapter/10.1007/978-3-030-93758-4_22" class="btn btn-dark btn-padded icon-paper">Read Paper</a> 
-  <a href="https://github.com/aigents/aigents-java-nlp" class="btn btn-dark btn-padded icon-code">View Code</a>
-  <a href="https://youtu.be/y7pW27-cxOE" class="btn btn-dark btn-padded icon-play">Watch Presentation</a></section>
-<hr style="position: relative; top: -50px">
-<p style="position: relative; top: -50px">
-  General conversational intelligence (GCI) can be considered one of the core aspects of
-artificial general intelligence (AGI); however, there currently exists minimal overlap
-between the disciplines of AGI and NLP. Only a few
-AGI architectures can comprehend and generate natural language, and most NLP
-systems rely on either hardcoded, specialized rules and frameworks that cannot generalize to the various complex domains of human language or on heavily trained deep
-neural network models that cannot be interpreted, controlled, or made sense of.
-Moreover, the majority of AGI frameworks that do possess some level of natural
-language comprehension (NLC) or natural language understanding (NLU) cannot
-convey such knowledge (e.g., a response to a query posed by a human) in natural language without template-based customization or similar manual, labor-intensive
-procedures.
+<section class="btns" ><a href="https://arxiv.org/abs/2105.08147" class="btn btn-dark btn-padded icon-paper">Read Paper</a> 
+  <a href="https://github.com/rvignav/CT2Xray" class="btn btn-dark btn-padded icon-code">View Code</a>
+  <a href="https://youtu.be/GGDTEq_liLE" class="btn btn-dark btn-padded icon-play">Watch Presentation</a>
+  <a href="https://github.com/rvignav/CT2Xray/tree/master/mixed" class="btn btn-dark btn-padded icon-layers">View Dataset</a></section>
+<hr >
+<p >
+  We develop an automated pipeline for COVID-19 lung lesion segmentation on chest X-rays. Due to the
+lack of publicly available annotated chest X-ray data, we implement a pixel-based algorithm (a method
+operating at the pixel level) that generates coronal X-ray projections from annotated volumetric CTs to
+augment the training dataset. A Mask R-CNN framework is then trained on this mixed dataset. Our
+model achieves superior accuracy with only limited supervised training.
 </p>
-  <p style="position: relative; top: -50px">
-    In this paper, we propose "Contextual Generator," a question answering (QA) architecture founded upon an
-extension of the previously published "Generator" sentence generation system that serves as an
-interpretable natural language processing (INLP) method.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> Let's dig into the Generator architecture first.
-    </p>
+ 
 
-<h2 style="position: relative; top: -50px"><span class="underline-effect-2">Generator: NLG $\in$ INLP</span></h1>
+<h2 ><span class="underline-effect-2">CT &rarr; CXR Conversion</span></h1>
 
-  <p style="position: relative; top: -50px">
-    To perform QA in an unsupervised and interpretable manner, we adopt and extend the
-Generator architecture proposed in our previous work. After calling the Loader, utility infrastructure to store the Link Grammar (LG)<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> dictionary in memory, the Generator performs surface
-realization as follows:</p>
-<ol style="position: relative; top: -50px">
-<li>Given a list of words, computes a subset of all orderings of those words that satisfies
-initial checks of the planarity and connectivity meta-rules.</li>
-<li>Determines if each ordering is grammatically valid; that is, ensures that every pair
-of consecutive tokens can be linked via a pair of “connectable” disjuncts.</li>
-<li>Returns all grammatically valid orderings as sentences.</li></ol>
+  <p >
+    We implement a pixel-based re-projection method, modeled as a sub-problem
+of ray tracing<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>, to compute chest X-rays as coronal projections of volumes of axial CT
+slices:</p>
+
+<div class="proof color-fg font-sans-serif rounded p-0.75 p-md-1" data-id="1">
+  <div class="informal-statement medium-small-copy"><div class="small-caps mb-0.5">Equation 1: CT to X-ray Conversion</div>
+  <!-- <div class="note">Adapted from AMC12B 2020 Problem 6</div> -->
+  We perform the following summation: <br><br><span style="font-size: x-large"><center>$\Theta(x,z) = \sum_{i=1}^{Y} \Phi(x,i,z) \quad \forall (x,z) \in [1, X] × [1, Z] ,$<br><br></center></span>
+  where $\Phi$ is an $X \times Y \times Z$ 3D array denoting the volumetric CT and $\Theta$ is an $X \times Z$ matrix denoting the computed X-ray.
+  </div><!-- end informal statement  -->
+  </div><!-- end proof -->
+
+  <p>The algorithm is implemented in Python as follows:</p>
+
+  <div  class="proof color-fg font-sans-serif rounded p-0.75 p-md-1" data-id="0">
+    <div class="informal-statement medium-small-copy"><div class="small-caps mb-0.5">Algorithm 1: create_CXR()</div>
+    <!-- <div class="note">Adapted from AMC12 2000 Problem 5</div> -->
+
+    <pre><code class="language-python">from PIL import Image
+import numpy as np
+
+def create_CXR(images): # images is a list of axial CT slices
+  for z in range(len(images)): 
+    img = Image.open(images[z]).convert('L')  # convert image to 8-bit grayscale
+    HEIGHT, WIDTH = img.size
+    data = list(img.getdata()) # convert image data to a list of integers
+    # convert that to 2D list (list of lists of integers)
+    pixels = [data[offset:offset+WIDTH] for offset in range(0, WIDTH*HEIGHT, WIDTH)]
+
+    xray = np.zeros((len(images), Image.open(images[0]).convert('L').size[0]))
+
+    # Loop from left to right on the CT slice
+    for x in range(WIDTH):
+      # Sum y values in the current x column
+      sum = 0
+      for y in range(HEIGHT):
+        sum += pixels[y][x]
+        # Assign sum to the point (x, z) on the coronal image - p[z][x] in the pixel array, 
+        # since z represents height (rows) and x represents length (columns)
+        xray[len(images) - 1 - z][x] = sum
   
-<p style="position: relative; top: -50px">The core of step 2 is the <code>connects()</code> function, which determines the "connectability" of two tokens $left$ and $right$:</p>
+  return xray</code></pre>
+    </div><!-- end formal -->
+    </div>
+
+
+
+
+
+<h2 ><span class="underline-effect-2"><span style="font-variant: small-caps">ChexMix</span>: the 1<sup>st</sup> open-source dataset containing $>$100 CXRs with COVID-19 lung lesion annotations</span></h1>
+    
+
+<p >We present the first publicly available, open-source chest X-ray dataset containing over 100 images,
+  assembled from <a href="https://coronacases.org/" target="_blank">a</a> <a href="https://radiopaedia.org/" target=_blank>variety</a> <a href="https://zenodo.org/record/3757476#.Yq1KpuzML8E" target=_blank>of</a> <a href="https://arxiv.org/abs/2005.06465" target=_blank>public</a> <a href="https://covid-segmentation.grand-challenge.org/Data/" target="_blank">sources</a>, with COVID-19 lung lesion annotations
+  produced by our Mask R-CNN model:</p>
+
+
+
+
+
+  <div id="samples-content" class="full mb-1.5 position-relative overflow-hidden" style="background-color:#f6f6f4; ">
+    <div class="js-carousel carousel pt-4 pb-2.5">
+    <div class="js-carousel-item carousel-item" id="imperialism"><div class="container">
+    <div class="row mb-1.5">
+
+      
+
+      <iframe src="https://github.com/rvignav/CT2Xray/tree/master/xrays_only" style="border-radius: 10px; width:100%; height:500px"></iframe>
+
+      </div>
+    
   
-<div style="position: relative; top: -50px" class="proof color-fg font-sans-serif rounded p-0.75 p-md-1" data-id="0">
-<div class="informal-statement medium-small-copy"><div class="small-caps mb-0.5">Algorithm 1: Connects()</div>
-<!-- <div class="note">Adapted from AMC12 2000 Problem 5</div> -->
-<span class="underline-effect-2"><strong>Global Variables:</strong></span> <code><span class="model">dict</span></code> <code>(<span class="theorem">Dictionary</span>)</code>, the complete LG dictionary;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><span class="model">hyphenated</span></code> <code>(<span class="theorem">Dictionary</span>)</code>, the dictionary of hyphenated
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;terms (e.g., "son-in-law")
-<br>
-<span style="position: relative; top:10px" ><span class="underline-effect-2"><strong>Input:</strong></span> A pair of strings $\{left, right\}$ representing the two tokens to potentially be connected</span>
-<br>
-<span style="position: relative; top:20px" ><span class="underline-effect-2"><strong>Output:</strong></span> A boolean indicating whether $left$ and $right$ can be connected via valid LG rules</span>
-</div><!-- end informal statement  -->
-<br>
-<div class="formal" id="formal-0">
-<pre><code><span class="keyword">obtain</span> <span class="model">leftList</span>, the list of rules corresponding with <span class="model">left</span> 
-  (i.e., the rule when <span class="model">left</span> is a verb, the rule when <span class="model">left</span> is 
-  a gerund, etc.) from <span class="model">dict</span> and <span class="model">hyphenated</span>    
-
-<span class="keyword">obtain</span> <span class="model">rightList</span> in a similar manner
   
+    </div></div>
+    <div class="js-carousel-item carousel-item" id="pharmacists"><div class="container">
+    <div class="row mb-1.5">
+    
+      <div class="col-12 col-xl-3 mb-0.25"><div class="small-caps color-fg-50 text-xl-right mt-0.125">Context</div></div>
+      <div class="col-12 col-md-9 col-lg-8 col-xl-6">
+      <div class="medium-small-copy">
+        Pharmacists are healthcare professionals with specialized education and training who perform various roles to ensure optimal health outcomes for their patients through the quality use of medicines. Pharmacists may also be small business proprietors, owning the pharmacy in which they practice. Since pharmacists know about the mode of action of a particular drug, and its metabolism and physiological effects on the human body in great detail, they play an important role in optimization of a drug treatment for an individual.    </div>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-12 col-xl-3 mb-0.5"><div class="small-caps color-fg-50 text-xl-right">Query</div></div>
+      <div class="col-12 col-md-9 col-lg-8 col-xl-6">
+        <div class="medium-small-copy font-italic" style="position: relative; top:-5px">
+    pharmacists are    </div>
+      
+      </div>
+      </div>
+    <br>
+      <div class="row">
+        <div class="col-12 col-xl-3 mb-0.5"><div class="small-caps color-fg-50 text-xl-right">Output</div></div>
+        <div class="col-12 col-md-9 col-lg-8 col-xl-6">
+          <div class="medium-small-copy font-monospace" style="position: relative; top:-5px">
+      Pharmacists are <mark style="background-color: rgba(255, 213, 0, 0.689);">proprietors</mark>.    </div>
+  
+    </div>
+    </div>
+    </div></div>
+  
+    <div class="js-carousel-item carousel-item" id="normans"><div class="container">
+      <div class="row mb-1.5">
+      
+        <div class="col-12 col-xl-3 mb-0.25"><div class="small-caps color-fg-50 text-xl-right mt-0.125">Context</div></div>
+        <div class="col-12 col-md-9 col-lg-8 col-xl-6">
+        <div class="medium-small-copy">
+          A tradition of singing had developed and the choir achieved fame in Normandy. Under the Norman abbot Robert, several monks fled to southern Italy, where they were patronized by Robert and established a Latin monastery. There they continued the tradition of singing.
+        </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-12 col-xl-3 mb-0.5"><div class="small-caps color-fg-50 text-xl-right">Query</div></div>
+        <div class="col-12 col-md-9 col-lg-8 col-xl-6">
+          <div class="medium-small-copy font-italic" style="position: relative; top:-5px">
+      monks fled to    </div>
+        
+        </div>
+        </div>
+      <br>
+        <div class="row">
+          <div class="col-12 col-xl-3 mb-0.5"><div class="small-caps color-fg-50 text-xl-right">Output</div></div>
+          <div class="col-12 col-md-9 col-lg-8 col-xl-6">
+            <div class="medium-small-copy font-monospace" style="position: relative; top:-5px">
+        Monks fled to <mark style="background-color: rgba(255, 0, 0, 0.689);">tradition</mark>.    </div>
+    
+      </div>
+      </div>
+      </div></div>
+    
+      
+  
+  
+  
+    
+    
+    
+    </div><!-- end .carousel -->
+    </div><!-- end #samples-content -->
 
-<span class="keyword">for</span> <span class="model">leftRule</span> <span class="keyword">in</span> <span class="model">leftList</span>:
-  <span class="keyword">for</span> <span class="model">rightRule</span> <span class="keyword">in</span> <span class="model">rightList</span>:
-    <span class="keyword">split</span> <span class="model">leftRule</span> and <span class="model">rightRule</span> into lists of <span class="theorem">Disjuncts</span> <span class="model">ld</span>, <span class="model">rd</span>
-    <span class="keyword">for</span> <span class="model">l</span> <span class="keyword">in</span> <span class="model">ld</span>:
-      <span class="keyword">for</span> <span class="model">r</span> <span class="keyword">in</span> <span class="model">rd</span>:
-        <span class="keyword">swap</span> all instances of <span style="color:rgba(0, 225, 255, 0.689)">'-'</span> and <span style="color:rgba(0, 225, 255, 0.689)">'+'</span> in <span class="model">l</span> 
-        <span class="keyword">if</span> <span class="model">l</span> <span class="keyword">==</span> <span class="model">r</span>:
-          <span class="keyword">return</span> <strong><span style="color:rgba(0, 225, 255, 0.689)">True</span></strong>
 
-<span class="keyword">return</span> <strong><span style="color:rgba(0, 225, 255, 0.689)">False</span></strong>
-</code></pre>
-</div><!-- end formal -->
-</div>
-<p style="position: relative; top: -50px">An example query fed to the Generator, along with its response, is as follows:</p>
 
-<div class="full bg-fg-3 pt-3 pb-3" id="sample" style="position: relative; top: -50px"><div class="container">
+
+
+  <h2>Hello</h2>
+
+<div class="full bg-fg-3 pt-3 pb-3" id="sample"><div class="container">
   <div class="row mb-0.125"><div class="content">
   <!-- <button class="button-unstyled fade js-refresh-sample" style="visibility: visible;" onclick="refreshSample()">
   <span class="small-copy"><span class="icon font-xxsmall mr-1/12 position-relative" style="top:0.15em;left:-1px">refresh</span>View another passage</span>
@@ -369,12 +473,12 @@ of consecutive tokens can be linked via a pair of “connectable” disjuncts.</
   </div></div><!-- end .col --><!-- end .row -->
   </div></div>
 
-<h2 style="position: relative; top: -50px"><span class="underline-effect-2">Contextual Generator: QA $\in$ INLP</span></h1>
+<h2 ><span class="underline-effect-2">Contextual Generator: QA $\in$ INLP</span></h1>
 
-  <p style="position: relative; top: -50px">
+  <p >
   The Contextual Generator (CG) performs closed-domain QA on queries structured as
 lists of seed words. It operates as follows:</p>
-<ol style="position: relative; top: -50px">
+<ol >
 <li>The CG calls the Loader to store the LG dictionary and corpus lexicon as well as
 extract a context lexicon from a given document as described above.</li>
 <li>The CG then recursively calls the Generator to determine valid sentence constructions from a list containing all seed words and $n$ additional words from a subset
@@ -386,9 +490,9 @@ imposing the constraint that the answer is of minimum length.</li>
 has not exceeded a limit specified to avoid combinatorial explosions (3 min in our
 experiments), the CG increases $n$ by $1$ and repeats step 2.</li>
 </ol>
-<h2 style="position: relative; top: -50px"><span class="underline-effect-2">Zipf's what?</span></h1>
+<h2 ><span class="underline-effect-2">Zipf's what?</span></h1>
 
-<p style="position: relative; top: -50px">
+<p >
   In the previous subsection, it was specified that the CG checks
 $n$-addition permutations in order of decreasing Zipfian frequency. To motivate this,
 consider the sample query “mom cake” along with a context specifying the food
@@ -402,7 +506,7 @@ corpus, regardless of context, than more semantically appropriate words (such as
 “likes” in the context of food preferences as in the motivating example above). To
 account for Zipf’s law, we use the Zipfian frequency:
 </p>
-<div style="position: relative; top: -50px" class="proof color-fg font-sans-serif rounded p-0.75 p-md-1" data-id="1">
+<div class="proof color-fg font-sans-serif rounded p-0.75 p-md-1" data-id="1">
   <div class="informal-statement medium-small-copy"><div class="small-caps mb-0.5">Equation 1: Zipfian Frequency</div>
   <!-- <div class="note">Adapted from AMC12B 2020 Problem 6</div> -->
   The Zipfian frequency $Z_w$ is given by:<br><br><span style="font-size: x-large"><center>$Z_w = \frac{\log(1+F_X(w))}{\log(1+F_C(w))},$</center></span>
@@ -410,16 +514,16 @@ account for Zipf’s law, we use the Zipfian frequency:
   where $w$ is the given word, $F_X(w)$ is the frequency of $w$ in the context document, and $F_C(w)$ is the frequency of $w$ in the corpus.
   </div><!-- end informal statement  -->
   </div><!-- end proof -->
-  <p style="position: relative; top: -50px">
+  <p>
   Because the Zipfian frequency divides the
   logarithm of the context frequency by that of the corpus frequency, more contextually
   appropriate words receive higher scores than do determiners and similarly common
   words. For multiple-word additions, we sum individual Zipfian frequencies.
 </p>
 
-<h2 style="position: relative; top: -50px"><span class="underline-effect-2">Results</span></h1>
+<h2><span class="underline-effect-2">Results</span></h1>
 
-<p style="position: relative; top:-50px">When tested on 60 queries from SingularityNET’s POC-English corpus, our model far outperformed prior language models 
+<p>When tested on 60 queries from SingularityNET’s POC-English corpus, our model far outperformed prior language models 
   (<a href="https://arxiv.org/abs/1810.04805" target=_blank>BERT</a>, <a href="https://arxiv.org/abs/2003.10555" target=_blank>ELECTRA</a>, 
   <a href="https://arxiv.org/abs/1910.01108" target=_blank>DistilBERT</a>, and <a href="https://arxiv.org/abs/1907.11692" target=_blank>RoBERTa</a>) in terms of BLEU, <strong>W</strong>ord2<strong>V</strong>ec <strong>C</strong>osine <strong>S</strong>imilarity (WVCS), and <strong>T</strong>ranslation <strong>E</strong>dit <strong>R</strong>ate (TER), and 
   achieved competitive <strong>W</strong>ord <strong>E</strong>rror <strong>R</strong>ate (WER) scores:</p>
@@ -431,108 +535,7 @@ account for Zipf’s law, we use the Zipfian frequency:
 <p style="font-family: ColfaxAI,Helvetica,sans-serif; font-variant: small-caps; font-size: medium; position: relative; left:101%; bottom:320px; color:blue">wer&nbsp;<span style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; position: relative; top:-2px;">&darr;</span></p>
 <p style="font-family: ColfaxAI,Helvetica,sans-serif; font-variant: small-caps; font-size: medium; position: relative; left:101%; bottom:215px; color:orange">ter&nbsp;<span style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; position: relative; top:-2px;">&darr;</span></p>
 
-<p style="position: relative; top:-100px;">Tests of the CG on three samples randomly obtained from SQuAD 2.0 are shown below.</p>
-
-<div id="samples-content" class="full mb-1.5 position-relative overflow-hidden" style="background-color:#f6f6f4; position: relative; top:-100px;">
-  <div class="js-carousel carousel pt-4 pb-2.5">
-  <div class="js-carousel-item carousel-item" id="imperialism"><div class="container">
-  <div class="row mb-1.5">
-  <div class="col-12 col-xl-3 mb-0.25"><div class="small-caps color-fg-50 text-xl-right mt-0.125">Context</div></div>
-  <div class="col-12 col-md-9 col-lg-8 col-xl-6">
-  <div class="medium-small-copy">
-    Imperialism is defined as “A policy of extending the power and influence of a country through diplomacy or military force.” Imperialism is particularly focused on the control that one group, often a state power, has on another group of people. There is “formal” and “informal” imperialism. “Formal imperialism” is defined as “physical control or colonial rule”. “Informal imperialism” is less direct; however, it is still a powerful form of dominance.
-  </div>
-  </div>
-  </div>
-  <div class="row">
-  <div class="col-12 col-xl-3 mb-0.5"><div class="small-caps color-fg-50 text-xl-right">Query</div></div>
-  <div class="col-12 col-md-9 col-lg-8 col-xl-6">
-    <div class="medium-small-copy font-italic" style="position: relative; top:-5px">
-imperialism focus    </div>
-  
-  </div>
-  </div>
-<br>
-  <div class="row">
-    <div class="col-12 col-xl-3 mb-0.5"><div class="small-caps color-fg-50 text-xl-right">Output</div></div>
-    <div class="col-12 col-md-9 col-lg-8 col-xl-6">
-      <div class="medium-small-copy font-monospace" style="position: relative; top:-5px">
-  Imperialism focused on <mark style="background-color: rgba(0, 255, 55, 0.689);">control</mark>.    </div>
-    
-    </div>
-    
-  
-  </div>
-  
-
-
-  </div></div>
-  <div class="js-carousel-item carousel-item" id="pharmacists"><div class="container">
-  <div class="row mb-1.5">
-  
-    <div class="col-12 col-xl-3 mb-0.25"><div class="small-caps color-fg-50 text-xl-right mt-0.125">Context</div></div>
-    <div class="col-12 col-md-9 col-lg-8 col-xl-6">
-    <div class="medium-small-copy">
-      Pharmacists are healthcare professionals with specialized education and training who perform various roles to ensure optimal health outcomes for their patients through the quality use of medicines. Pharmacists may also be small business proprietors, owning the pharmacy in which they practice. Since pharmacists know about the mode of action of a particular drug, and its metabolism and physiological effects on the human body in great detail, they play an important role in optimization of a drug treatment for an individual.    </div>
-    </div>
-    </div>
-    <div class="row">
-    <div class="col-12 col-xl-3 mb-0.5"><div class="small-caps color-fg-50 text-xl-right">Query</div></div>
-    <div class="col-12 col-md-9 col-lg-8 col-xl-6">
-      <div class="medium-small-copy font-italic" style="position: relative; top:-5px">
-  pharmacists are    </div>
-    
-    </div>
-    </div>
-  <br>
-    <div class="row">
-      <div class="col-12 col-xl-3 mb-0.5"><div class="small-caps color-fg-50 text-xl-right">Output</div></div>
-      <div class="col-12 col-md-9 col-lg-8 col-xl-6">
-        <div class="medium-small-copy font-monospace" style="position: relative; top:-5px">
-    Pharmacists are <mark style="background-color: rgba(255, 213, 0, 0.689);">proprietors</mark>.    </div>
-
-  </div>
-  </div>
-  </div></div>
-
-  <div class="js-carousel-item carousel-item" id="normans"><div class="container">
-    <div class="row mb-1.5">
-    
-      <div class="col-12 col-xl-3 mb-0.25"><div class="small-caps color-fg-50 text-xl-right mt-0.125">Context</div></div>
-      <div class="col-12 col-md-9 col-lg-8 col-xl-6">
-      <div class="medium-small-copy">
-        A tradition of singing had developed and the choir achieved fame in Normandy. Under the Norman abbot Robert, several monks fled to southern Italy, where they were patronized by Robert and established a Latin monastery. There they continued the tradition of singing.
-      </div>
-      </div>
-      </div>
-      <div class="row">
-      <div class="col-12 col-xl-3 mb-0.5"><div class="small-caps color-fg-50 text-xl-right">Query</div></div>
-      <div class="col-12 col-md-9 col-lg-8 col-xl-6">
-        <div class="medium-small-copy font-italic" style="position: relative; top:-5px">
-    monks fled to    </div>
-      
-      </div>
-      </div>
-    <br>
-      <div class="row">
-        <div class="col-12 col-xl-3 mb-0.5"><div class="small-caps color-fg-50 text-xl-right">Output</div></div>
-        <div class="col-12 col-md-9 col-lg-8 col-xl-6">
-          <div class="medium-small-copy font-monospace" style="position: relative; top:-5px">
-      Monks fled to <mark style="background-color: rgba(255, 0, 0, 0.689);">tradition</mark>.    </div>
-  
-    </div>
-    </div>
-    </div></div>
-  
-    
-
-
-
-  
-  
-  
-  </div><!-- end .carousel -->
-  </div><!-- end #samples-content -->
+<p style="position: relative; top:-150px;">Tests of the CG on three samples randomly obtained from SQuAD 2.0 are shown below.</p>
 
 
   <h2 style="position: relative; top: -100px"><span class="underline-effect-2">What next?</span></h2>
@@ -978,13 +981,13 @@ imperialism focus    </div>
   </script>
 <footer class="post-footer js-post-footer" style="margin-top: 0px">
 <!-- footer item -->
-<div><hr><div class="row" id="acknowledgments">
+<!-- <div><hr><div class="row" id="acknowledgments">
 <div class="col">Acknowledgments</div>
 <div class="col">
 <p>Thanks to our colleagues at SingularityNET and OpenCog, Ben Goertzel and Linas Vepstas, for their support and thoughtful feedback since the beginning of the Interpretable Natural Language Processing (INLP) initiative.</p>
 <p>Thanks to Andres Suarez for his help with training and testing data collection.</p>
 </div>
-</div></div>
+</div></div> -->
 <!-- special footer item for footnotes -->
 <div data-order="-2"><hr><div class="row" id="footnotes">
 <div class="col">Footnotes</div>
@@ -992,8 +995,8 @@ imperialism focus    </div>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>We published <span style="color: black">&ldquo;Loader-Generator,&rdquo;</span> a state-of-the-art model architecture for generating grammatically valid sentences using the
-  <span style="color: black"><span class="underline-effect-2"><a style="text-decoration: none" href="https://www.link.cs.cmu.edu/link/" target=_blank>Link Grammar</a></span></span> database, on <span class="underline-effect-2" style="color: black"><a style="text-decoration: none" href="https://arxiv.org/abs/2105.00830" target="_blank">arXiv</a></span> in April 2021. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+<li id="fn1" class="footnote-item">
+  <p>the act of using the path that light takes through pixels to create images <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn2" class="footnote-item"><p><span style="color: black">INLP</span> is
   an extension of <span style="color: black">interpretable AI (IAI)</span>—which expands upon explainable AI (XAI) by
@@ -1031,7 +1034,7 @@ imperialism focus    </div>
     <div class="row" id="authors">
       <div class="col">Authors</div>
       <div class="col js-post-footer-authors-list ">
-        <span class="post-author"><a class="fade" href="https://vignavramesh.me">Vignav Ramesh</a></span><span class="post-author"><a class="fade" href="https://aigents.com">Anton Kolonin</a></span></span>
+        <span class="post-author"><a class="fade" href="https://vignavramesh.me">Vignav Ramesh</a></span><span class="post-author"><a class="fade" href="https://orcid.org/0000-0002-4490-0444">Blaine Rister</a></span><span class="post-author"><a class="fade" href="http://rubinlab.stanford.edu/">Daniel L. Rubin</a></span></span>
       </div>
     </div>
   </div>
