@@ -30,6 +30,7 @@ including problems from the AMC12
 as well as two problems adapted from" /> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <link rel="stylesheet" href="/path/to/styles/default.min.css">
+
 <script src="/path/to/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 
@@ -159,6 +160,12 @@ as well as two problems adapted from" /> -->
 }
 .underline-effect-2 {
   background-image: linear-gradient(120deg, #00a3c484 0%, #0092af86 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.25em;
+  background-position: 0 80%;
+}
+.underline-effect-3 {
+  background-image: linear-gradient(120deg, #00c46984 0%, #00af6f86 100%);
   background-repeat: no-repeat;
   background-size: 100% 0.25em;
   background-position: 0 80%;
@@ -308,80 +315,42 @@ def create_CXR(images): # images is a list of axial CT slices
 
   <div id="samples-content" class="full mb-1.5 position-relative overflow-hidden" style="background-color:#f6f6f4; ">
     <div class="js-carousel carousel pt-4 pb-2.5">
-    <div class="js-carousel-item carousel-item" id="imperialism"><div class="container">
+    <div class="js-carousel-item carousel-item" id="xrays-only" style="height: 510px"><div class="container">
     <div class="row mb-1.5">
 
-      
-
-      <iframe src="https://github.com/rvignav/CT2Xray/tree/master/xrays_only" style="border-radius: 10px; width:100%; height:500px"></iframe>
+      <iframe src="https://www.kaggle.com/datasets/rvignav/xrays-only" style="border-radius: 10px; width:100%; height:500px"></iframe>
 
       </div>
     
   
   
     </div></div>
-    <div class="js-carousel-item carousel-item" id="pharmacists"><div class="container">
-    <div class="row mb-1.5">
     
-      <div class="col-12 col-xl-3 mb-0.25"><div class="small-caps color-fg-50 text-xl-right mt-0.125">Context</div></div>
-      <div class="col-12 col-md-9 col-lg-8 col-xl-6">
-      <div class="medium-small-copy">
-        Pharmacists are healthcare professionals with specialized education and training who perform various roles to ensure optimal health outcomes for their patients through the quality use of medicines. Pharmacists may also be small business proprietors, owning the pharmacy in which they practice. Since pharmacists know about the mode of action of a particular drug, and its metabolism and physiological effects on the human body in great detail, they play an important role in optimization of a drug treatment for an individual.    </div>
-      </div>
-      </div>
-      <div class="row">
-      <div class="col-12 col-xl-3 mb-0.5"><div class="small-caps color-fg-50 text-xl-right">Query</div></div>
-      <div class="col-12 col-md-9 col-lg-8 col-xl-6">
-        <div class="medium-small-copy font-italic" style="position: relative; top:-5px">
-    pharmacists are    </div>
-      
-      </div>
-      </div>
-    <br>
-      <div class="row">
-        <div class="col-12 col-xl-3 mb-0.5"><div class="small-caps color-fg-50 text-xl-right">Output</div></div>
-        <div class="col-12 col-md-9 col-lg-8 col-xl-6">
-          <div class="medium-small-copy font-monospace" style="position: relative; top:-5px">
-      Pharmacists are <mark style="background-color: rgba(255, 213, 0, 0.689);">proprietors</mark>.    </div>
-  
-    </div>
-    </div>
-    </div></div>
-  
-    <div class="js-carousel-item carousel-item" id="normans"><div class="container">
+    <div class="js-carousel-item carousel-item" id="mixed" style="height: 510px"><div class="container">
       <div class="row mb-1.5">
+  
+        <iframe src="https://www.kaggle.com/datasets/rvignav/xrays-only" style="border-radius: 10px; width:100%; height:500px"></iframe>
+  
+        </div>
       
-        <div class="col-12 col-xl-3 mb-0.25"><div class="small-caps color-fg-50 text-xl-right mt-0.125">Context</div></div>
-        <div class="col-12 col-md-9 col-lg-8 col-xl-6">
-        <div class="medium-small-copy">
-          A tradition of singing had developed and the choir achieved fame in Normandy. Under the Norman abbot Robert, several monks fled to southern Italy, where they were patronized by Robert and established a Latin monastery. There they continued the tradition of singing.
-        </div>
-        </div>
-        </div>
-        <div class="row">
-        <div class="col-12 col-xl-3 mb-0.5"><div class="small-caps color-fg-50 text-xl-right">Query</div></div>
-        <div class="col-12 col-md-9 col-lg-8 col-xl-6">
-          <div class="medium-small-copy font-italic" style="position: relative; top:-5px">
-      monks fled to    </div>
-        
-        </div>
-        </div>
-      <br>
-        <div class="row">
-          <div class="col-12 col-xl-3 mb-0.5"><div class="small-caps color-fg-50 text-xl-right">Output</div></div>
-          <div class="col-12 col-md-9 col-lg-8 col-xl-6">
-            <div class="medium-small-copy font-monospace" style="position: relative; top:-5px">
-        Monks fled to <mark style="background-color: rgba(255, 0, 0, 0.689);">tradition</mark>.    </div>
     
-      </div>
-      </div>
+    
       </div></div>
+
+  
+      <div class="js-carousel-item carousel-item" id="test" style="height: 510px"><div class="container">
+        <div class="row mb-1.5">
+    
+          <iframe src="https://www.kaggle.com/datasets/rvignav/xrays-only" style="border-radius: 10px; width:100%; height:500px"></iframe>
+    
+          </div>
+        
+      
+      
+        </div></div>
     
       
   
-  
-  
-    
     
     
     </div><!-- end .carousel -->
@@ -391,135 +360,136 @@ def create_CXR(images): # images is a list of axial CT slices
 
 
 
-  <h2>Hello</h2>
+    <h2 ><span class="underline-effect-2">Lung Lesion Segmentation</span></h1>
 
+      <p>We employ a naive implementation of the Mask R-CNN framework for the task of instance segmentation.
+        In a Mask R-CNN architecture, training samples are fed into a ResNet-101 backbone network, convolved, and passed to the Region Proposal Network (RPN) to generate a set of proposed regions
+        possibly containing lung lesions. Anchors corresponding with each region of interest are then passed
+        through a series of feature maps to generate masks outlining COVID-19 lung lesions on the input chest
+        X-ray. Object classes and bounding boxes are computed via a series of fully connected layers. The task
+        of COVID-19 lung lesion segmentation is posed as a problem of binary classification between the image
+        background and lung lesions. The final output is a predicted mask corresponding with the input chest
+        X-ray, which can then be overlaid on the input image for clinical use.</p>
+  
+  
 <div class="full bg-fg-3 pt-3 pb-3" id="sample"><div class="container">
+  
   <div class="row mb-0.125"><div class="content">
   <!-- <button class="button-unstyled fade js-refresh-sample" style="visibility: visible;" onclick="refreshSample()">
   <span class="small-copy"><span class="icon font-xxsmall mr-1/12 position-relative" style="top:0.15em;left:-1px">refresh</span>View another passage</span>
   </button> -->
   </div></div>
   <!-- passage -->
-  <div class="row mb-2" style="margin-bottom: 0px !important;">
-  <div class="col-12 col-md-9 col-lg-8 col-xl-3">
-  <aside class="medium-small-copy font-bold ml-auto mb-0.2 position-xl-relative text-xl-right">
-    Excerpt of<br>LG Dictionary</aside></div><div class="col-12 col-md-9 col-lg-8 col-xl-6">
-      <pre style="position: relative; top:-25px"><code><span style="color: gray">% Grammar Learner v.0.4 2018-06-06 11:05:37 UTC</span>
-&lang;dictionary-version-number&rang;: V0v0v4+;
-&lang;dictionary-locale&rang;: EN4us+;
 
-<span style="color: gray">% C01</span>
-"directors" "has" "with":
-(C02C01-) or (C03C01- & C01C02+) or (C03C01- & C01C05+) or (C04C01- & C01C05+) or (C05C01- & C01C02+) or (C05C01- & C01C04+) or (C05C01- & C01C05+);
 
-<span style="color: gray">% C02</span>
-"are" "binoculars" "board" "of" "sees" "to" "wants" "wood":
-(C01C02-) or (C02C02+) or (C02C02- & C02C01+) or (C02C02- & C02C03+) or (C02C02- & C02C04+) or (C03C02- & C02C02+ & C02C03+) or (C03C02- & C02C03+ & C02C02+) or (C03C02- & C02C03+ & C02C03+) or (C05C02- & C02C03+) or (C05C02- & C04C02-) or (C05C02- & C05C02-) or (C05C02- & C05C02- & C02C02+);
+<center><img src="diagram-1.png" style="width:80%">
 
-<span style="color: gray">% C03</span>
-"a" "before" "cake" "child" "dad" "daughter" "food" "her" "his" "human" "mom" "not" "now" "parent" "sausage" "son" "tool":
-(C02C03-) or (C02C03- & C03C03-) or (C03C01+) or (C03C02+) or (C03C03+) or (C03C03- & C02C03-) or (C03C03- & C03C04+) or (C03C03- & C03C05+) or (C03C03- & C05C03-) or (C03C04+) or (C03C05+) or (C04C03-) or (C05C03-) or (C05C03- & C03C01+);
-
-<span style="color: gray">% C04</span>
-"be" "chalk" "knocked" "likes" "sawed":
-(C01C04-) or (C02C04- & C04C05+) or (C03C04- & C04C02+ & C04C01+) or (C03C04- & C04C03+) or (C03C04- & C04C03+ & C04C03+);
-
-<span style="color: gray">% C05</span>
-"hammer" "is" "liked" "on" "saw" "telescope" "the" "was" "writes":
-(C01C05- & C03C05-) or (C03C05- & C01C05-) or (C03C05- & C05C01+ & C05C05+ & C05C02+) or (C03C05- & C05C03+) or (C03C05- & C05C03+ & C05C01+) or (C03C05- & C05C03+ & C05C03+) or (C03C05- & C05C03+ & C05C03+ & C05C03+) or (C03C05- & C05C05+) or (C03C05- & C05C05+ & C05C01+) or (C03C05- & C05C05+ & C05C02+ & C05C01+) or (C04C05- & C05C02+) or (C05C02+) or (C05C05+) or (C05C05- & C05C02+) or (C05C05- & C05C03+);</code></pre>
-  <!-- <div class="medium-small-copy truncate rounded p-0.5 bg-fg-3 mb-1" id="passage" style="border:1px inset rgba(0, 0, 0, 0.075)" data-fill="passage">New Jersey is in the crosshairs of a major winter storm that could paralyze parts of New England and dump in excess of a foot of snow on the Garden State by Saturday. The forecast remains highly volatile and may change dramatically in the coming 24 hours.<br><br>Throughout the day, The Star-Ledger will provide updates here (newest on top) as new information comes in, watches and warnings are issued and the forecast changes.</div> -->
-  <!-- <div class="medium-small-copy" id="question" data-fill="question">What does the article say about the storm’s effects on daily life?</div> -->
-  </div><!-- end .col -->
-  </div><!-- end .row -->
+<hr class="my-1" style="max-width:840px">
+<div class="caption my-0" style="max-width:840px">
+<p>
+  <span style="color:black">Mask R-CNN network architecture.</span> Training images are fed into a backbone network, which then passes a network representation of the training samples to the Region Proposal Network
+  (RPN). The RPN scans the top-bottom pathway of the backbone network and proposes regions which
+  may contain objects of interest on the feature map. RPN anchors are then fed into a series of feature
+  maps, allowing for the parallel execution of two operations: 1) the creation of masks; and 2) the generation
+  of object classes and bounding boxes using a series of fully connected layers.</p>
+</div></center>
+  
   <!-- summary -->
-  <div class="row mb-2">
-  <div class="col-12 col-md-9 col-lg-8 col-xl-3">
-  <aside class="medium-small-copy font-bold pt-0.2 ml-auto mb-0.2 position-xl-relative text-xl-right">
-    Query
-  </aside>
-  </div>
-  <div class="col-12 col-md-9 col-lg-8 col-xl-6 medium-small-copy">
-  <!-- <button onclick="toggle(['blog/critiques/summary-human.html'], ['blog/critiques/summary-human-misleading.html','blog/critiques/summary-model.html'])" class="js-toggler button-unstyled py-0.2 mr-1/3 active">Human</button>
-  <button onclick="toggle(['blog/critiques/summary-human-misleading.html'], ['blog/critiques/summary-human.html','blog/critiques/summary-model.html'])" class="js-toggler button-unstyled py-0.2 mr-1/3">Human misleading</button>
-  <button onclick="toggle(['blog/critiques/summary-model.html'], ['blog/critiques/summary-human.html','blog/critiques/summary-human-misleading.html'])" class="js-toggler button-unstyled py-0.2 mr-1/3">AI</button> -->
-  <!-- <hr class="my-0 mb-0.75"> -->
-  <div class="medium-small-copy" data-id="summary-human" data-fill="answer_human" style="display: block; position: relative; top:5px;">[“mom”, “dad”, “company”, “wants”, “join”, “the”, “to”]</div>
-  <!-- <div class="medium-small-copy" data-id="summary-human-misleading" data-fill="answer_human_misleading" style="display: none;">Daily events are expected to be heavily disrupted during the storm as the conditions for a blizzard are ripe. Travel is expected to be heavily affected, and NJ Transit announced that commuters will be able to use their tickets for any transit option like buses, ferries, etc. will be able to use it for another method. Visibility is expected to be extremely reduced as well. Furthermore, this storm may push waves and water inland to a degree much further than previously seen as an aftereffect of Hurricane Sandy. The storm can also end up destroying the roads, making travel impossible. Finally, many schools preemptively canceled schools in addition to several events.</div> -->
-  <!-- <div class="medium-small-copy"><samp data-id="summary-model" data-fill="answer_model" style="display: none;">The storm could paralyze parts of New England, and dump a foot of snow on New Jersey. Travel will be impacted. Many flights have already been canceled. Schools are preemptively canceling or delaying classes. Events are being postponed. There is a threat that snowfall rates could reach two inches per hour across large swaths of northern and central New Jersey. Snowfall rates of this magnitude could reduce visibility substantially, wreak havoc on roads and make travel dangerous, if not nearly impossible.</samp></div> -->
-  </div></div><!-- end .col --><!-- end .row -->
+  
   <!-- critiques -->
-  <div class="row mb-0.5">
-  <div class="col-12 col-md-9 col-lg-8 col-xl-3">
-  <aside class="medium-small-copy font-bold pt-0.2 ml-auto mb-0.2 position-xl-relative text-xl-right">
-    Output
-  </aside>
-  </div>
-  <div class="col-12 col-md-9 col-lg-8 col-xl-6 medium-small-copy">
-  <!-- <button onclick="toggle(['blog/critiques/critiques-unassisted.html'], ['blog/critiques/critiques-assisted.html'])" class="js-toggler button-unstyled py-0.2 mr-1/3 active">Unassisted</button>
-  <button onclick="toggle(['blog/critiques/critiques-assisted.html'], ['blog/critiques/critiques-unassisted.html'])" class="js-toggler button-unstyled py-0.2 mr-1/3">AI-assisted</button> -->
-  <!-- <hr class="my-0 mb-0.75"> -->
-  <!-- <div data-id="summary-human" style="display: block;"> -->
-  <div class="medium-small-copy" data-id="critiques-unassisted" style="display: block; position: relative; top:5px;">
-     <!-- <aside class="aside text-xl-right small-copy pt-0.1 mb-0.2 color-fg-60">Human-written</aside> -->
-     <div class="critiques critiques-human" data-fill="human_critiques_unassisted"><div>
-     ["Dad wants mom to join the company.", "Mom wants dad to join the company."]<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>
-    </div></div>
-    <br><br><br>
-  <!-- </div> -->
   
-  
-  </div>
-  
-  </div></div><!-- end .col --><!-- end .row -->
   </div></div>
 
-<h2 ><span class="underline-effect-2">Contextual Generator: QA $\in$ INLP</span></h1>
+  <h3 ><span class="underline-effect-3">Environmental Setup</span></h1>
 
-  <p >
-  The Contextual Generator (CG) performs closed-domain QA on queries structured as
-lists of seed words. It operates as follows:</p>
-<ol >
-<li>The CG calls the Loader to store the LG dictionary and corpus lexicon as well as
-extract a context lexicon from a given document as described above.</li>
-<li>The CG then recursively calls the Generator to determine valid sentence constructions from a list containing all seed words and $n$ additional words from a subset
-of words in the context lexicon that satisfy initial checks of the planarity and
-connectivity meta-rules. The $n$-addition permutations are tested in order of decreasing Zipfian frequency<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> corresponding to the current context. If a valid sentence is found, the CG
-returns that sentence and stops running. When step 2 is first executed, $n = 1$,
-imposing the constraint that the answer is of minimum length.</li>
-<li>If no sentences have been generated after testing all valid subsets and the runtime
-has not exceeded a limit specified to avoid combinatorial explosions (3 min in our
-experiments), the CG increases $n$ by $1$ and repeats step 2.</li>
-</ol>
-<h2 ><span class="underline-effect-2">Zipf's what?</span></h1>
 
 <p >
-  In the previous subsection, it was specified that the CG checks
-$n$-addition permutations in order of decreasing Zipfian frequency. To motivate this,
-consider the sample query “mom cake” along with a context specifying the food
-preferences of family members. If the CG were to use context word frequencies without
-modification rather than Zipfian frequencies, it would perceive the sentence “Cake was
-a mom” as more contextually appropriate than “Mom likes cake,” which is the ground
-truth answer. This is due to a phenomenon known as Zipf’s Law, which states that
-the rank-frequency distribution of words in a given lexicon is an inverse relation;
-determiners and linking verbs (“a,” “the,” “was,” “is,” etc.) are more common in any
-corpus, regardless of context, than more semantically appropriate words (such as
-“likes” in the context of food preferences as in the motivating example above). To
-account for Zipf’s law, we use the Zipfian frequency:
+  Our models were trained on a single GPU (Tesla P4 GPU provided by Google Colab, 16 GB memory). The code is implemented using TensorFlow v1, but is compatible with TensorFlow v2 and can be ported to the <a href="https://www.tensorflow.org/versions" target="_blank">most recent version of TensorFlow</a> if desired. To install all required dependencies, run the following:
 </p>
-<div class="proof color-fg font-sans-serif rounded p-0.75 p-md-1" data-id="1">
-  <div class="informal-statement medium-small-copy"><div class="small-caps mb-0.5">Equation 1: Zipfian Frequency</div>
-  <!-- <div class="note">Adapted from AMC12B 2020 Problem 6</div> -->
-  The Zipfian frequency $Z_w$ is given by:<br><br><span style="font-size: x-large"><center>$Z_w = \frac{\log(1+F_X(w))}{\log(1+F_C(w))},$</center></span>
-  <br>
-  where $w$ is the given word, $F_X(w)$ is the frequency of $w$ in the context document, and $F_C(w)$ is the frequency of $w$ in the corpus.
-  </div><!-- end informal statement  -->
-  </div><!-- end proof -->
-  <p>
-  Because the Zipfian frequency divides the
-  logarithm of the context frequency by that of the corpus frequency, more contextually
-  appropriate words receive higher scores than do determiners and similarly common
-  words. For multiple-word additions, we sum individual Zipfian frequencies.
-</p>
+
+<pre><code class="language-python">pip install tensorflow==1.15.2 keras==2.1.0 Pillow scikit-image opencv-python numpy glob2 regex os-sys argparse matplotlib</code></pre>
+
+<p>Afterwards, set up the Mask R-CNN model:</p>
+
+<pre><code class="language-python">git clone --quiet https://github.com/rvignav/Mask_RCNN.git
+cd ~/Mask_RCNN
+pip install -q PyDrive
+python setup.py install
+cp ~/Mask_RCNN/samples/balloon/balloon.py ./lesion.py
+sed -i -- 's/balloon/lesion/g' lesion.py
+sed -i -- 's/Balloon/Lesion/g' lesion.py</code></pre>
+
+<h3 ><span class="underline-effect-3">Training</span></h1>
+
+  <p>The following commands can be used to train the Mask R-CNN model:  </p>
+
+  <pre><code class="language-python"># Train a new model starting from pre-trained ImageNet weights
+python lesion.py train --dataset='/path/to/data/' --weights=imagenet
+    
+# Train a new model starting from pre-trained COCO weights
+python lesion.py train --dataset='/path/to/data/' --weights=coco
+    
+# Continue training a model that you had trained earlier
+python lesion.py train --dataset='/path/to/data/' --weights=/path/to/weights/
+    
+# Continue training the last model you trained. This will find
+# the last trained weights in the model directory.
+python lesion.py train --dataset='/path/to/data/' --weights=last</code></pre>
+
+<p>To train with data augmentation, run:</p>
+
+<pre><code class="language-python">python lesion.py train --dataset='/path/to/data/' --weights=imagenet/coco/last --aug='y'</code></pre>
+
+<p>The CT to X-ray re-projection algorithm can be executed in isolation as follows:</p>
+
+<pre><code class="language-python">python ct2xray.py &langle;path/to/CT/volume&rangle; &langle;path/to/mask/volume&rangle;</code></pre>
+
+  <h3 ><span class="underline-effect-3">Pre-trained Models</span></h1>
+
+    <table>
+      <tr>
+        <th>Training dataset</th>
+        <th>Train/test split</th>
+        <th>Data augmentation (y/n)</th>
+        <th>Checkpoint</th>
+      </tr>
+      <tr>
+        <td>X-rays only</td>
+        <td>60/40</td>
+        <td>y</td>
+        <td><span class="underline-effect-2"><a style="text-decoration: none" href="https://drive.google.com/file/d/1Db0NhVCIBOJJTfDHjtmgm3I10-KsUpg-/view?usp=sharing" target=_blank>Download</a></span></td>
+      </tr>
+      <tr>
+        <td>Mixed</td>
+        <td>60/40</td>
+        <td>y</td>
+        <td><span class="underline-effect-2"><a style="text-decoration: none" href="https://drive.google.com/file/d/1nizSK5_RQXsaQ-omKtKL3dwaLL2xJnfC/view?usp=sharing" target=_blank>Download</a></span></td>
+      </tr>
+      <tr>
+        <td>X-rays only</td>
+        <td>80/20</td>
+        <td>y</td>
+        <td><span class="underline-effect-2"><a style="text-decoration: none" href="https://drive.google.com/file/d/15TBvC-UUYZ4OB_ExNCewHNrZFXdDCPZR/view?usp=sharing" target=_blank>Download</a></span></td>
+      </tr>
+      <tr>
+        <td>Mixed</td>
+        <td>80/20</td>
+        <td>y</td>
+        <td><span class="underline-effect-2"><a style="text-decoration: none" href="https://drive.google.com/file/d/1cO2ck9sJm79tmW-FvawO_ogIL_4yLFpU/view?usp=sharing" target=_blank>Download</a></span></td>
+      </tr>
+      <tr>
+        <td>X-rays only</td>
+        <td>80/20</td>
+        <td>n</td>
+        <td><span class="underline-effect-2"><a style="text-decoration: none" href="https://drive.google.com/file/d/1fNQndbTef8bu-OPJZHUio4CtTgQMKKxr/view?usp=sharing" target=_blank>Download</a></span></td>
+      </tr>
+      <tr>
+        <td>Mixed</td>
+        <td>80/20</td>
+        <td>n</td>
+        <td><span class="underline-effect-2"><a style="text-decoration: none" href="https://drive.google.com/file/d/11Bs9XbJNKPXaVzKWydvR6r6j9cOFf5ig/view?usp=sharing" target=_blank>Download</a></span></td>
+      </tr>
+    </table>
 
 <h2><span class="underline-effect-2">Results</span></h1>
 
@@ -797,7 +767,7 @@ account for Zipf’s law, we use the Zipfian frequency:
   </script>
 
 <script>
-  var xValues = ["BERT","ELECTRA", "DistilBERT", "RoBERTa", "CG"];
+  var xValues = ["Dataset 1 (X-rays only)","Dataset 2 (Mixed)"];
   
   new Chart("myChart", {
     type: "line",
@@ -805,24 +775,13 @@ account for Zipf’s law, we use the Zipfian frequency:
       labels: xValues,
       datasets: [{ 
         // label: 'BLEU&uarr;',
-        data: [0.639,0.712, 0.604, 0.767, 0.878],
-        borderColor: "red",
+        data: [0.8056, 0.7937],
+        borderColor: "blue",
         fill: false
       }, { 
         // label: 'Word2Vec Cosine Similarity&uarr;',
-        data: [0.606, 0.741, 0.595, 0.799, 0.944],
+        data: [0.3824, 0.4870],
         borderColor: "green",
-        fill: false
-      }, { 
-        // label: 'WER&darr;',
-        data: [0.924, 0.550, 1.095, 0.150, 0.645],
-        borderColor: "blue",
-        fill: false
-      },
-      { 
-        // label: 'TER&darr;',
-        data: [0.381, 0.342, 0.457, 0.245, 0.166],
-        borderColor: "orange",
         fill: false
       }]
     },
@@ -979,6 +938,7 @@ account for Zipf’s law, we use the Zipfian frequency:
     initToggler();
   });
   </script>
+
 <footer class="post-footer js-post-footer" style="margin-top: 0px">
 <!-- footer item -->
 <!-- <div><hr><div class="row" id="acknowledgments">
