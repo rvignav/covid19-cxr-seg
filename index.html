@@ -28,8 +28,14 @@ including problems from the AMC12
 [https://www.maa.org/math-competitions/amc-1012] and AIME
 [https://www.maa.org/math-competitions/invitational-competitions] competitions,
 as well as two problems adapted from" /> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
 <link rel="stylesheet" href="/path/to/styles/default.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+<script src="./Plugin.Errorbars.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
 
 <script src="/path/to/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
@@ -204,7 +210,8 @@ Using a Sparsely Supervised Mask R-CNN
 on Chest X-rays Automatically Computed 
 from Volumetric CTs.” arXiv:2105.08147
 [eess.IV], May 2021.
-</code></pre></div></div></div></div>
+</code></pre>
+</div></div></div></div>
  </div>
   </div>
 </header>
@@ -220,7 +227,7 @@ from Volumetric CTs.” arXiv:2105.08147
   lung lesion segmentation on chest X-rays is clinically valuable. To <mark>accelerate 
   severity detection</mark> and <mark>augment the amount of publicly available chest X-ray training data 
   for supervised DL models</mark>, we propose an automated pipeline for segmentation of COVID-19 lung lesions 
-  on chest X-rays comprised of a <mark style="background-color: rgba(0, 225, 255, 0.689);">Mask R-CNN</mark> trained on a <mark style="background-color: rgba(0, 225, 255, 0.689);">mixed dataset</mark> of open-source chest 
+  on chest X-rays comprised of a <mark style="background-color: rgba(0, 225, 255, 0.689);">Mask R-CNN</mark> trained on <span style="font-variant: small-caps"><mark style="background-color: rgba(255, 0, 234, 0.689);">CheXMix</mark></span>, our newly released dataset containing a <mark style="background-color: rgba(0, 225, 255, 0.689);">mixture</mark> of open-source chest 
   X-rays and <mark style="background-color: rgba(0, 225, 255, 0.689);">coronal X-ray projections computed from annotated volumetric CTs</mark>. 
   
   <!-- In this paper, we propose an
@@ -298,15 +305,44 @@ def create_CXR(images): # images is a list of axial CT slices
     </div><!-- end formal -->
     </div>
 
-
-
-
-
-<h2 ><span class="underline-effect-2"><span style="font-variant: small-caps">ChexMix</span>: the 1<sup>st</sup> open-source dataset containing $>$100 CXRs with COVID-19 lung lesion annotations</span></h1>
+    <div class="full bg-fg-3 pt-3 pb-3" id="sample"><div class="container">
+  
+      <div class="row mb-0.125"><div class="content">
+      <!-- <button class="button-unstyled fade js-refresh-sample" style="visibility: visible;" onclick="refreshSample()">
+      <span class="small-copy"><span class="icon font-xxsmall mr-1/12 position-relative" style="top:0.15em;left:-1px">refresh</span>View another passage</span>
+      </button> -->
+      </div></div>
+      <!-- passage -->
+    
+    
+    <center><img src="Figure1.png" style="width:65%">
+    
+    <hr class="my-1" style="max-width:840px">
+    <div class="caption my-0" style="max-width:840px">
+    <p>
+      Our algorithm uses <span style="color:black">(a)</span> a volumetric CT and <span style="color:black">(b)</span> a volume of
+      mask slices to compute <span style="color:black">(c)</span> an annotated coronal CXR.
+    
+    
+    </p>
+    </div></center>
+      
+      <!-- summary -->
+      
+      <!-- critiques -->
+      
+      </div></div>
     
 
-<p >We present the first publicly available, open-source chest X-ray dataset containing over 100 images,
-  assembled from <a href="https://coronacases.org/" target="_blank">a</a> <a href="https://radiopaedia.org/" target=_blank>variety</a> <a href="https://zenodo.org/record/3757476#.Yq1KpuzML8E" target=_blank>of</a> <a href="https://arxiv.org/abs/2005.06465" target=_blank>public</a> <a href="https://covid-segmentation.grand-challenge.org/Data/" target="_blank">sources</a>, with COVID-19 lung lesion annotations
+
+
+
+
+<h2 ><span class="underline-effect-2"><span style="font-variant: small-caps">CheXMix</span>: a <strong>che</strong>st <strong>X</strong>-ray dataset containing a <strong>mix</strong>ture of patient X-rays and coronal CT projections</span></h1>
+    
+
+<p >We present <span style="font-variant: small-caps">CheXMix</span>, the first publicly available, open-source chest X-ray dataset containing over 100 images
+  (assembled from <a href="https://coronacases.org/" target="_blank">a</a> <a href="https://radiopaedia.org/" target=_blank>variety</a> <a href="https://zenodo.org/record/3757476#.Yq1KpuzML8E" target=_blank>of</a> <a href="https://arxiv.org/abs/2005.06465" target=_blank>public</a> <a href="https://covid-segmentation.grand-challenge.org/Data/" target="_blank">sources</a>) with COVID-19 lung lesion annotations
   produced by our Mask R-CNN model:</p>
 
 
@@ -492,20 +528,25 @@ python lesion.py train --dataset='/path/to/data/' --weights=last</code></pre>
     </table>
 
 <h2><span class="underline-effect-2">Results</span></h1>
+  
 
-<p>When tested on 60 queries from SingularityNET’s POC-English corpus, our model far outperformed prior language models 
-  (<a href="https://arxiv.org/abs/1810.04805" target=_blank>BERT</a>, <a href="https://arxiv.org/abs/2003.10555" target=_blank>ELECTRA</a>, 
-  <a href="https://arxiv.org/abs/1910.01108" target=_blank>DistilBERT</a>, and <a href="https://arxiv.org/abs/1907.11692" target=_blank>RoBERTa</a>) in terms of BLEU, <strong>W</strong>ord2<strong>V</strong>ec <strong>C</strong>osine <strong>S</strong>imilarity (WVCS), and <strong>T</strong>ranslation <strong>E</strong>dit <strong>R</strong>ate (TER), and 
-  achieved competitive <strong>W</strong>ord <strong>E</strong>rror <strong>R</strong>ate (WER) scores:</p>
+  <canvas id="container" style="width:100%; height:400px"></canvas>
 
-<!-- <br><br> -->
-<canvas id="myChart" style="width:100%;max-width:1200px"></canvas>
-<!-- <p style="font-family: ColfaxAI,Helvetica,sans-serif; font-variant: small-caps; font-size: medium; position: relative; left:101%; bottom:315px; color:green">bleu&nbsp;<span style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; ">↑</span></p>
-<p style="font-family: ColfaxAI,Helvetica,sans-serif; font-variant: small-caps; font-size: medium; position: relative; left:101%; bottom:345px; color:red">wvcs&nbsp;<span style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; position: relative; top:-2px;">↑</span></p>
-<p style="font-family: ColfaxAI,Helvetica,sans-serif; font-variant: small-caps; font-size: medium; position: relative; left:101%; bottom:320px; color:blue">wer&nbsp;<span style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; position: relative; top:-2px;">&darr;</span></p>
-<p style="font-family: ColfaxAI,Helvetica,sans-serif; font-variant: small-caps; font-size: medium; position: relative; left:101%; bottom:215px; color:orange">ter&nbsp;<span style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; position: relative; top:-2px;">&darr;</span></p> -->
-<br><br>
-<p>Tests of the CG on three samples randomly obtained from SQuAD 2.0 are shown below.</p>
+
+<br>
+<p>Our model's results far exceed the few existing published baselines. For instance, Tang, Sun, and Li’s U-Net segmentation model (the only published COVID-19 lung lesion segmentation
+  framework with publicly available model schematics), when implemented and trained on Datasets 1 and
+  2, achieved <strong>I</strong>ntersection <strong>o</strong>ver <strong>U</strong>nion (IoU) scores of 0.38 ± 0.03 and 0.49 ± 0.03, respectively, both of which are significantly lower
+  than our model’s corresponding IoU scores of 0.81 ± 0.03 and 0.79 ± 0.03. Since we trained and tested
+  our model and the baseline model on the same datasets, our Mask R-CNN likely outperformed Tang,
+  Sun, and Li’s U-Net segmentation architecture due to its structure as a series of recurring feature maps
+  rather than contracting and expansive paths, the presence of the RPN, and its greater complexity in
+  the form of a ResNet-101 backbone rather than a ResNet-18 backbone.</p>
+  
+  <p>Furthermore, the fact that model achieved similar results after training on both Datasets 1 and 2 indicates that we can replace more than 83% of chest X-ray training images with X-ray projections
+    generated from CTs while maintaining model accuracy.</p>
+
+<p>Representative results are shown in the figures below.</p>
 
 <div class="full bg-fg-3 pt-3 pb-3" id="sample"><div class="container">
   
@@ -819,7 +860,7 @@ python lesion.py train --dataset='/path/to/data/' --weights=last</code></pre>
     }
   });
   </script>
-
+<script src="./script.js"></script>
 <script>
   // get and randomize JSON samples, https://stackoverflow.com/a/35294675
   // var filePath = "https://cdn.openai.com/critiques/draft-20220605a/";
