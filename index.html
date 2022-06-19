@@ -400,7 +400,7 @@ def create_CXR(images): # images is a list of axial CT slices
   
   </div></div>
 
-  <h3 ><span class="underline-effect-3">Environmental Setup</span></h1>
+  <h3 ><span class="underline-effect-3">Environmental Setup</span><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></h1>
 
 
 <p >
@@ -436,7 +436,7 @@ python lesion.py train --dataset='/path/to/data/' --weights=/path/to/weights/
 # the last trained weights in the model directory.
 python lesion.py train --dataset='/path/to/data/' --weights=last</code></pre>
 
-<p>To train with data augmentation, run:</p>
+<p>To train with data augmentation<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>, run:</p>
 
 <pre><code class="language-bash">python lesion.py train --dataset='/path/to/data/' --weights=imagenet/coco/last --aug='y'</code></pre>
 
@@ -507,19 +507,48 @@ python lesion.py train --dataset='/path/to/data/' --weights=last</code></pre>
 <br><br>
 <p>Tests of the CG on three samples randomly obtained from SQuAD 2.0 are shown below.</p>
 
+<div class="full bg-fg-3 pt-3 pb-3" id="sample"><div class="container">
+  
+  <div class="row mb-0.125"><div class="content">
+  <!-- <button class="button-unstyled fade js-refresh-sample" style="visibility: visible;" onclick="refreshSample()">
+  <span class="small-copy"><span class="icon font-xxsmall mr-1/12 position-relative" style="top:0.15em;left:-1px">refresh</span>View another passage</span>
+  </button> -->
+  </div></div>
+  <!-- passage -->
+
+
+<center><img src="Screen Shot 2022-06-18 at 10.26.26 PM.png" style="width:150%">
+
+<hr class="my-1" style="max-width:840px">
+<div class="caption my-0" style="max-width:840px">
+<p>
+  <span style="color:black">Left: Ground truth and predicted masks.</span> Sample of five chest X-rays from the test dataset (X-rays are the same within individual columns). The top
+  row (white) displays the ground truth masks, the middle row (green) contains the masks predicted by
+  the model after training on Dataset 1, and the bottom row (blue) contains the masks predicted by the
+  model after training on Dataset 2. <br><br><span style="color:black">Right: Overlaid segmentations.</span> The top row displays
+  the original X-rays, the middle row contains the predicted segmentations overlaid on the X-rays after
+  training on Dataset 1, and the bottom row contains the predicted segmentations overlaid on the X-rays
+  after training on Dataset 2.
+
+
+</p>
+</div></center>
+  
+  <!-- summary -->
+  
+  <!-- critiques -->
+  
+  </div></div>
+
+
+
 
   <h2><span class="underline-effect-2">What next?</span></h2>
 
-  <p>Our QA architecture will primarily be applied to the <a href="https://ieeexplore.ieee.org/abstract/document/8109887" target="_blank">Aigents Social Media Intelligence Platform</a>. If integrated into the Aigents cognitive architecture—which
-    currently depends on artificially controlled language similar to oversimplified “pidgin”
-    English—our algorithm could provide GCI to Aigents chatbots.
-    </p>
-    <p >
-      Our future work will involve: 1) testing our algorithm on queries from arbitrary
-    English documents using the complete LG dictionary; 2) implementing grammatical
-    disambiguation; 3) expanding our algorithm’s QA capabilities by building an integrated LG schema containing semantic as well as grammatical knowledge; 4) implementing the full QA pipeline including semantic interpretation and query execution
-    preceding response generation; and 5) adding support for languages other than English
-    (including languages such as Russian that require heavy morphology usage).</p>
+  <p>A limitation of our study is that we used small amounts of publicly available data; however, our results
+    still suggest that improved accuracy can be obtained by augmenting chest X-ray data with large numbers
+    of frontal projections of public CT volumes. Training and testing our model on larger datasets could
+    improve future results.</p>
     <br><br>
 
 <style>
@@ -958,21 +987,26 @@ python lesion.py train --dataset='/path/to/data/' --weights=last</code></pre>
 <li id="fn1" class="footnote-item">
   <p>the act of using the path that light takes through pixels to create images <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn2" class="footnote-item"><p><span style="color: black">INLP</span> is
-  an extension of <span style="color: black">interpretable AI (IAI)</span>—which expands upon explainable AI (XAI) by
-  calling for an <span style="color: black">interpretable model/knowledge base</span> as well as <span style="color: black">explainable results</span>—to
-  NLP. INLP enables the <span style="color: black">acquisition of natural language</span>, <span style="color: black">comprehension of text-based
-  messages</span>, and <span style="color: black">production of linguistic content</span> in a <span style="color: black">reasonable</span> and <span style="color: black">transparent</span> manner. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+
+<li id="fn2" class="footnote-item"><p>
+ <span style="color:black">Default Setting:</span> We trained for $30$ epochs,
+each with $200$ training steps and $50$ validation steps, at batch size $2$. We used ResNet-101 as the base
+encoder network with backbone strides of $4$, $8$, $16$, $32$, and $64$ and a top-down pyramid size of $256$. For the
+losses, we used RPN class loss, RPN bounding box loss, Mask R-CNN class loss, Mask R-CNN bounding
+box loss, and Mask R-CNN mask loss. We used a gradient clip norm of $5.0$, an image shape of $1024 \times
+1024 \times 3$, a learning momentum of $0.9$, a learning rate of $0.001$, a weight decay of $0.0001$, and a mask
+shape of $28 \times 28$. For the RPN specifications, we used anchor ratios of $0.5$, $1$, and $2$; anchor scales of $32$, $64$, $128$, $256$, and $512$; 
+an anchor stride of $1$; a ROI positive ratio of $0.33$; bounding box standard
+deviations of $0.1$ and $0.2$; and $200$ training ROIs per image. The maximum number of ground truth
+instances is $15$. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn3" class="footnote-item"><p>
-  LG is founded upon the fact that each word is defined by a <span style="color: black">set of connectors</span> and
-  <span style="color: black">disjuncts associating those connectors</span>. Connectors serve as either the <span style="color: black">left or right half</span>
-  of a <span style="color: black">grammatical link</span>, and disjuncts are <span style="color: black">sets of connectors that define
-  the valid grammatical context of a given word</span>. <span style="color: black">Rules</span>—which represent lexical
-  entries or grammatical categories—describe the <span style="color: black">sets of defining disjuncts</span> for clusters of
-  grammatically equivalent words. LG imposes <span style="color: black">two additional meta-rules</span>: <span style="color: black">"planarity"</span> (links must not cross), and <span style="color: black">"connectivity"</span> (all links and tokens in a sentence must form a connected graph). <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+
+<li id="fn3" class="footnote-item"><p> The following
+  augmentation techniques were applied to the training samples with specified probabilities in parentheses: horizontal flip ($0.5$), $0$-$10$% random crop ($1.0$), 
+  small Gaussian blur with randomly chosen $\sigma \in [0,0.5]$ ($0.5$), contrast normalization, per-channel pixel multiplication with $\delta \in [0.8,1.2]$ ($0.2$), affine transformation ($1.0$),
+  scale, rotate, &amp; shear. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn4" class="footnote-item"><p>
+<!-- <li id="fn4" class="footnote-item"><p>
     It is seen that the Generator falls victim to the issue of <span style="color: black">grammatical
     ambiguity</span>, which refers to situations in which <span style="color: black">the same word may have different roles
     in a sentence</span> (i.e. a noun can be either a subject or an object) or <span style="color: black">may represent different
@@ -980,7 +1014,7 @@ python lesion.py train --dataset='/path/to/data/' --weights=last</code></pre>
 </li>
 <li id="fn5" class="footnote-item"><p>
   a metric derived from <span style="color:black">Zipf's Law</span> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
-</li>
+</li> -->
 
 </ol>
 </section>
